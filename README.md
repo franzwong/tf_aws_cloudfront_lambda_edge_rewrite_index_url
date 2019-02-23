@@ -9,11 +9,6 @@ A Terraform module containing Lambda@Edge to rewrite url to index.html (e.g. rew
 ## Outputs
 * `lambda_qualified_arn` - Qualified ARN of lambda function
 
-## Build
-```
-make
-```
-
 ## Usage example
 ```
 module cloudfront_lambda {
