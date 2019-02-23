@@ -5,6 +5,6 @@ build:
 	rm -rf lambda_edge/output
 	mkdir -p lambda_edge/output
 	cp lambda_edge/src/index.js lambda_edge/output
-	cd lambda_edge/output && zip -r9 ../output.zip ./*
+	cd lambda_edge/output && zip -r9 ../deploy.zip ./*
 
 .PHONEY: build
