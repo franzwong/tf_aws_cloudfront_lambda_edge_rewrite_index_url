@@ -17,7 +17,7 @@ make
 ## Usage example
 ```
 module cloudfront_lambda {
-  source                = "github.com/franzwong/tf_aws_cloudfront_lambda_edge_rewrite_index_url"
+  source                    = "github.com/franzwong/tf_aws_cloudfront_lambda_edge_rewrite_index_url"
 
   lambda_function_name      = "example-com-cloudfront-rewriteurl"
   log_retention_in_days     = "1"
