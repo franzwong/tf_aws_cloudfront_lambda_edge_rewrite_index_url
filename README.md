@@ -10,6 +10,9 @@ A Terraform module containing Lambda@Edge to rewrite url to index.html (e.g. rew
 * `lambda_qualified_arn` - Qualified ARN of lambda function
 
 ## Usage example
+
+Import module
+
 ```
 module cloudfront_lambda {
   source                    = "github.com/franzwong/tf_aws_cloudfront_lambda_edge_rewrite_index_url"
@@ -17,6 +20,16 @@ module cloudfront_lambda {
   lambda_function_name      = "example-com-cloudfront-rewriteurl"
   log_retention_in_days     = "1"
   lambda_role_name_prefix   = "example-com-cloudfront-rewriteurl-"
+}
+```
+
+Add to the cache behaviour of your `aws_cloudfront_distribution`
+
+```
+lambda_function_association {
+  event_type = "viewer-request"
+  lambda_arn   = "${module.cloudfront_lambda.lambda_qualified_arn}"
+  include_body = false
 }
 ```
 
